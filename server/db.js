@@ -7,8 +7,6 @@ const collections = {
   orders: "orders",
 };
 
-const client = new MongoClient(url);
-
 async function startup() {
   let client = new MongoClient(url);
   await client.connect();
