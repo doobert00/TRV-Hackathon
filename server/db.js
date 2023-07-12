@@ -20,6 +20,17 @@ async function startup() {
 startup();
 
 module.exports.findAllProducts = (callback) => {
-  let dataPromise = collections.products.find({}).toArray();
-  dataPromise.then((products) => callback(products));
+  collections.products
+    .find({})
+    .toArray()
+    .then((products) => callback(products));
+};
+
+module.exports.findAllCategories = (callback) => {
+  collections.categories
+    .find({})
+    .toArray()
+    .then((categories) => {
+      callback(categories);
+    });
 };

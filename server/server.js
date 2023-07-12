@@ -30,10 +30,6 @@ app.get("/", (req, res) => {
 });
 
 app.route("/api/products").get((req, res) => {
-  // fs.readFile("../dataset/products.json", (err, json) => {
-  //   let obj = JSON.parse(json);
-  //   res.json(obj);
-  // });
   db.findAllProducts((products) => {
     if (!products) {
       res.status(404).end();
@@ -44,9 +40,12 @@ app.route("/api/products").get((req, res) => {
 });
 
 app.route("/api/categories").get((req, res) => {
-  fs.readFile("../dataset/categories.json", (err, json) => {
-    let obj = JSON.parse(json);
-    res.json(obj);
+  db.findAllCategories((categories) => {
+    if (!categories) {
+      res.status(404).end();
+    } else {
+      res.send(categories);
+    }
   });
 });
 
