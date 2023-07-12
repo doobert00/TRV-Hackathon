@@ -34,3 +34,12 @@ module.exports.findAllCategories = (callback) => {
       callback(categories);
     });
 };
+
+module.exports.findAllOrders = (callback) => {
+  collections.orders
+    .find({})
+    .toArray()
+    .then((orders) => {
+      callback(orders);
+    });
+};

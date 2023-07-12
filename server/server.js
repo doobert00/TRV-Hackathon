@@ -50,9 +50,12 @@ app.route("/api/categories").get((req, res) => {
 });
 
 app.route("/api/orders").get((req, res) => {
-  fs.readFile("../dataset/orders.json", (err, json) => {
-    let obj = JSON.parse(json);
-    res.json(obj);
+  db.findAllOrders((orders) => {
+    if (!orders) {
+      res.status(404).end();
+    } else {
+      res.send(orders);
+    }
   });
 });
 
