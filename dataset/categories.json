@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "name": "Music",
+    "products": [6]
+  },
+  {
+    "id": 2,
+    "name": "Grocery",
+    "products": [9, 3, 2, 6, 2, 8, 2]
+  },
+  {
+    "id": 3,
+    "name": "Shoes",
+    "products": [2, 1]
+  },
+  {
+    "id": 4,
+    "name": "Games",
+    "products": [8, 10, 7, 2, 2, 1, 6, 2]
+  },
+  {
+    "id": 5,
+    "name": "Health",
+    "products": [1, 1, 8, 5]
+  },
+  {
+    "id": 6,
+    "name": "Toys",
+    "products": [10, 5]
+  },
+  {
+    "id": 7,
+    "name": "Movies",
+    "products": [6, 9]
+  },
+  {
+    "id": 8,
+    "name": "Movies",
+    "products": [8, 2, 4, 3, 7, 9, 4, 2, 6, 8]
+  },
+  {
+    "id": 9,
+    "name": "Beauty",
+    "products": [7, 7, 2, 1, 2, 4]
+  },
+  {
+    "id": 10,
+    "name": "Jewelry",
+    "products": [3]
+  },
+  {
+    "id": 11,
+    "name": "Music",
+    "products": [3]
+  }
+]
