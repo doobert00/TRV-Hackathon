@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
+const fs = require("fs");
 
 const app = express();
 const port = 3000;
@@ -25,6 +26,27 @@ app.get("/", (req, res) => {
       </li>
     </ul>`
   );
+});
+
+app.route("/api/products").get((req, res) => {
+  fs.readFile("../dataset/products.json", (err, json) => {
+    let obj = JSON.parse(json);
+    res.json(obj);
+  });
+});
+
+app.route("/api/categories").get((req, res) => {
+  fs.readFile("../dataset/categories.json", (err, json) => {
+    let obj = JSON.parse(json);
+    res.json(obj);
+  });
+});
+
+app.route("/api/orders").get((req, res) => {
+  fs.readFile("../dataset/orders.json", (err, json) => {
+    let obj = JSON.parse(json);
+    res.json(obj);
+  });
 });
 
 app.listen(port, () => {
