@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Route, Routes, Navigate, Link } from "react-router-dom";
 import "./App.css";
 import logo from "./components/logo.png";
+import HomeView from "./components/HomeView.js";
 
 const categoryLink =
   "https://5190-2603-7080-2001-3b05-285b-82f8-6e37-c08d.ngrok-free.app/api/categories";
@@ -15,11 +16,13 @@ function App() {
   const [searchInput, setSearchInput] = useState("");
   const [categories, setCategories] = useState([]);
 
+  /*
   useEffect(() => {
     fetchCategories().then((cats) => {
       setCategories(cats);
     });
   }, []);
+  */
 
   return (
     <div className="wrapper">
@@ -33,15 +36,11 @@ function App() {
           value={searchInput}
         />
       </div>
-      <div className="left">
-        <ul>
-          {categories.map((cat, index) => {
-            return <li key={index}>{cat}</li>;
-          })}
-        </ul>
-      </div>
+      <div className="left"></div>
       <div className="right"> Right</div>
-      <div className="center"> Cetner</div>
+      <div className="center">
+        <HomeView />
+      </div>
     </div>
   );
 }
