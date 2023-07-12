@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Route, Routes, Navigate, Link } from "react-router-dom";
 import "./App.css";
-import logo from "./components/logo.png";
+
+import ItemView from "./components/ItemView";
+import CategoryView from "./components/CategoryView";
 import HomeView from "./components/HomeView.js";
+
+import logo from "./components/logo.png";
 
 const categoryLink =
   "https://5190-2603-7080-2001-3b05-285b-82f8-6e37-c08d.ngrok-free.app/api/categories";
