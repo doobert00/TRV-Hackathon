@@ -1,6 +1,7 @@
-import logo from "./logo.svg";
+import React from "react";
+import { Route, Routes, Navigate, Link } from "react-router-dom";
 import "./App.css";
-import { useState, useEffect } from "react";
+import HomeView from "./components/HomeView";
 
 function App() {
   fetch("http://localhost:3000/")
@@ -13,7 +14,9 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header"></header>
+      <header className="App-header">
+        <HomeView />
+      </header>
     </div>
   );
 }
