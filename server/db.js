@@ -31,20 +31,34 @@ module.exports.products = {
   },
 };
 
-module.exports.findAllCategories = (callback) => {
-  collections.categories
-    .find({})
-    .toArray()
-    .then((categories) => {
-      callback(categories);
-    });
+module.exports.categories = {
+  findAllCategories: (callback) => {
+    collections.categories
+      .find({})
+      .toArray()
+      .then((categories) => {
+        callback(categories);
+      });
+  },
+  findCategory: (id, callback) => {
+    collections.categories
+      .findOne({ id: parseInt(id) })
+      .then((category) => callback(category));
+  },
 };
 
-module.exports.findAllOrders = (callback) => {
-  collections.orders
-    .find({})
-    .toArray()
-    .then((orders) => {
-      callback(orders);
-    });
+module.exports.orders = {
+  findAllOrders: (callback) => {
+    collections.orders
+      .find({})
+      .toArray()
+      .then((orders) => {
+        callback(orders);
+      });
+  },
+  findOrder: (id, callback) => {
+    collections.orders
+      .findOne({ id: parseInt(id) })
+      .then((order) => callback(order));
+  },
 };
