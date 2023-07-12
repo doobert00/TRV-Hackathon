@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Route, Routes, Navigate, Link } from "react-router-dom";
-import "./App.css";
-import HomeView from "./components/HomeView";
+import "./View.css";
+import logo from "./components/logo.png";
 
 function App() {
   fetch("http://localhost:3000/")
@@ -11,14 +11,18 @@ function App() {
     .then((data) => {
       console.log(data);
     });
-
+  const [searchInput, setSearchInput] = useState("");
   return (
-    /*<div className="App">
-      <header className="App-header">
-        <HomeView />
-      </header>
-    </div>*/
-    <HomeView />
+    <div className="wrapper">
+      <div className="top">
+        <img style={{ width: 150, height: 125 }} src={logo} />
+
+        <input type="text" placeholder="Search..." value={searchInput} />
+      </div>
+      <div className="left"> Left</div>
+      <div className="right"> Right</div>
+      <div className="center"> Cetner</div>
+    </div>
   );
 }
 
