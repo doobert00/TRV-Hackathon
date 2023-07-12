@@ -17,7 +17,12 @@ function App() {
       <div className="top">
         <img style={{ width: 150, height: 125 }} src={logo} />
 
-        <input type="text" placeholder="Search..." value={searchInput} />
+        <input
+          type="text"
+          placeholder="Search..."
+          onChange={(event) => setSearchInput(event.target.value)}
+          value={searchInput}
+        />
       </div>
       <div className="left"> Left</div>
       <div className="right"> Right</div>
