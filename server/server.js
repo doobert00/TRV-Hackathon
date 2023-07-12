@@ -11,7 +11,20 @@ app.use(cors()); // Cross Origin Requests
 app.use(morgan("tiny")); // Server logs
 
 app.get("/", (req, res) => {
-  res.status(200).send({ hello: "world" });
+  res.send(
+    `    
+    <ul>
+      <li>
+        <a href="/api/products">Products</a>
+      </li>
+      <li>
+        <a href="/api/categories">Orders</a>
+      </li>
+      <li>
+        <a href="/api/orders">Categories</a>
+      </li>
+    </ul>`
+  );
 });
 
 app.listen(port, () => {
