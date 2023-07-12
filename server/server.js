@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
 const fs = require("fs");
+const db = require("./db");
 
 const app = express();
 const port = 3000;
@@ -29,9 +30,16 @@ app.get("/", (req, res) => {
 });
 
 app.route("/api/products").get((req, res) => {
-  fs.readFile("../dataset/products.json", (err, json) => {
-    let obj = JSON.parse(json);
-    res.json(obj);
+  // fs.readFile("../dataset/products.json", (err, json) => {
+  //   let obj = JSON.parse(json);
+  //   res.json(obj);
+  // });
+  db.findAllProducts((products) => {
+    if (!products) {
+      res.status(404).end();
+    } else {
+      res.send(products);
+    }
   });
 });
 
