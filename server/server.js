@@ -30,11 +30,21 @@ app.get("/", (req, res) => {
 });
 
 app.route("/api/products").get((req, res) => {
-  db.findAllProducts((products) => {
+  db.products.findAllProducts((products) => {
     if (!products) {
       res.status(404).end();
     } else {
       res.send(products);
+    }
+  });
+});
+
+app.route("/api/products/:id").get((req, res) => {
+  db.products.findProduct(req.params.id, (product) => {
+    if (!product) {
+      res.status(404).end();
+    } else {
+      res.send(product);
     }
   });
 });

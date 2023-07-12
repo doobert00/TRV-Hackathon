@@ -17,11 +17,18 @@ async function startup() {
 }
 startup();
 
-module.exports.findAllProducts = (callback) => {
-  collections.products
-    .find({})
-    .toArray()
-    .then((products) => callback(products));
+module.exports.products = {
+  findAllProducts: (callback) => {
+    collections.products
+      .find({})
+      .toArray()
+      .then((products) => callback(products));
+  },
+  findProduct: (id, callback) => {
+    collections.products
+      .findOne({ id: parseInt(id) })
+      .then((product) => callback(product));
+  },
 };
 
 module.exports.findAllCategories = (callback) => {
