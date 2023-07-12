@@ -19,10 +19,10 @@ app.get("/", (req, res) => {
         <a href="/api/products">Products</a>
       </li>
       <li>
-        <a href="/api/categories">Orders</a>
+        <a href="/api/orders">Orders</a>
       </li>
       <li>
-        <a href="/api/orders">Categories</a>
+        <a href="/api/categories">Categories</a>
       </li>
     </ul>`
   );
