@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Route, Routes, Navigate, Link } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 
 import ItemView from "./components/ItemView";
@@ -7,14 +7,6 @@ import CategoryView from "./components/CategoryView";
 import HomeView from "./components/HomeView.js";
 
 import logo from "./components/logo.png";
-
-const categoryLink =
-  "https://5190-2603-7080-2001-3b05-285b-82f8-6e37-c08d.ngrok-free.app/api/categories";
-
-async function fetchCategories() {
-  const res = await fetch(categoryLink);
-  return await res.json();
-}
 
 function App() {
   const [searchInput, setSearchInput] = useState("");
@@ -43,7 +35,10 @@ function App() {
       <div className="left"></div>
       <div className="right"> Right</div>
       <div className="center">
-        <HomeView />
+        <Routes>
+          <Route exact path="/" element={<HomeView />} />
+          <Route path="/item" element={<ItemView />} />
+        </Routes>
       </div>
     </div>
   );
