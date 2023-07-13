@@ -29,6 +29,19 @@ module.exports.products = {
       .findOne({ id: parseInt(id) })
       .then((product) => callback(product));
   },
+  incrementInventory: (products) => {
+    products = Array.from(new Set(products));
+    products = products.map((id) => {
+      return collections.products.findOneAndUpdate(
+        { id: parseInt(id) },
+        { $inc: { inventory_count: -1 } },
+        { returnNewDocument: true }
+      );
+    });
+    Promise.all(products).then((ok, value) => {
+      console.log(ok);
+    });
+  },
 };
 
 module.exports.categories = {
@@ -60,5 +73,18 @@ module.exports.orders = {
     collections.orders
       .findOne({ id: parseInt(id) })
       .then((order) => callback(order));
+  },
+  addOrder: (order, callback) => {
+    delete order._id;
+    max_id_order = collections.orders
+      .find({})
+      .sort({ id: -1 })
+      .limit(1)
+      .toArray()
+      .then((o) => {
+        order.id = parseInt(o[0].id + 1); // New order has an ID one higher than the largest ID in the collection
+        collections.orders.insertOne(order).then((ok) => callback(ok));
+        this.products.incrementInventory(order.products);
+      });
   },
 };
