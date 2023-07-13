@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Route, Routes } from "react-router-dom";
+import React, { useState, useEffect, useCallback } from "react";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import { Container, Row, Col } from "react-grid";
 import "./App.css";
 
@@ -10,6 +10,8 @@ import CategoryPane from "./components/CategoryPane";
 
 import logo from "./components/logo.png";
 function App() {
+  const nav = useNavigate();
+  const handleLogoClick = useCallback(() => nav("/", { replace: true }), [nav]);
   const [searchInput, setSearchInput] = useState("");
 
   return (
@@ -18,7 +20,11 @@ function App() {
         <div className="top">
           <Row>
             <Col>
-              <img style={{ width: 150, height: 125 }} src={logo} />
+              <img
+                style={{ width: 150, height: 125 }}
+                src={logo}
+                onClick={handleLogoClick}
+              />
             </Col>
             <Col>
               <input
@@ -41,12 +47,10 @@ function App() {
               <Routes>
                 <Route exact path="/" element={<HomeView />} />
                 <Route path="/item/:id" element={<ItemView />} />
+                <Route path="/category/:id" element={<CategoryView />} />
               </Routes>
             </Col>
           </div>
-          <Col>
-            <div className="right"> Right</div>
-          </Col>
         </Row>
       </Container>
     </div>

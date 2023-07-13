@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Container, Row, Col } from "react-grid";
+import { useNavigate } from "react-router-dom";
 import "./CategoryPane.css";
 
 const getCategories = async (url) => {
@@ -11,6 +12,11 @@ const getCategories = async (url) => {
 };
 
 export default function CategoryPane() {
+  const nav = useNavigate();
+  const handleClick = useCallback(
+    (id) => nav(`/category/${id}`, { replace: true }),
+    [nav]
+  );
   const [categoryList, setCategories] = useState([]);
 
   useEffect(() => {
@@ -25,7 +31,9 @@ export default function CategoryPane() {
         {categoryList.map((category) => {
           return (
             <Row>
-              <div className="catbtn">{category.name} </div>
+              <div className="catbtn" onClick={() => handleClick(category.id)}>
+                {category.name}
+              </div>
             </Row>
           );
         })}
