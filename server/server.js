@@ -85,6 +85,15 @@ app
         res.send(order);
       }
     });
+  })
+  .post("/api/orders", (req, res) => {
+    db.orders.addOrder(req.body, (ok) => {
+      if (!ok) {
+        res.status(500).end();
+      } else {
+        res.status(201).end();
+      }
+    });
   });
 
 app.listen(port, () => {
