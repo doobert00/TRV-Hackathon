@@ -1,0 +1,106 @@
+<diagram program="umletino" version="15.1"><zoom_level>6</zoom_level><element><id>UMLClass</id><coordinates><x>534</x><y>126</y><w>60</w><h>18</h></coordinates><panel_attributes>App.js
+bg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>270</x><y>246</y><w>60</w><h>18</h></coordinates><panel_attributes>MongoDB
+bg=green</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>336</x><y>246</y><w>60</w><h>18</h></coordinates><panel_attributes>Snowflake (?)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>300</x><y>198</y><w>60</w><h>18</h></coordinates><panel_attributes>Nginx Server
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>558</x><y>138</y><w>18</w><h>36</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;40</additional_attributes></element><element><id>Relation</id><coordinates><x>246</x><y>132</y><w>96</w><h>78</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;140;10;140;110</additional_attributes></element><element><id>UMLClass</id><coordinates><x>444</x><y>312</y><w>60</w><h>78</h></coordinates><panel_attributes>**Python DS**
+bg=cyan</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>558</x><y>198</y><w>18</w><h>42</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>288</x><y>258</y><w>18</w><h>48</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>UMLClass</id><coordinates><x>258</x><y>294</y><w>150</w><h>96</h></coordinates><panel_attributes>**Store Database**
+--
+-- Cart collection
+-- Inventory collection
+-- Review collection
+-- Customer purchase history collection
+--
+-- Item name
+-- Count
+-- Rating
+-- Review
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>192</x><y>126</y><w>60</w><h>18</h></coordinates><panel_attributes>Server.js
+bg=red
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>534</x><y>162</y><w>84</w><h>42</h></coordinates><panel_attributes>Components
+--
+bg=orange
+React components</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>438</x><y>126</y><w>66</w><h>18</h></coordinates><panel_attributes>index.js
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>588</x><y>126</y><w>114</w><h>78</h></coordinates><panel_attributes>lt=&lt;&lt;-
+</panel_attributes><additional_attributes>50;110;170;110;170;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>708</x><y>252</y><w>60</w><h>18</h></coordinates><panel_attributes>Style.css
+bg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>708</x><y>294</y><w>126</w><h>84</h></coordinates><panel_attributes>Style.css
+--
+Classes
+** - View**
+ - HomeView
+ - CartView
+ - CategoryView
+ - ItemView
+ - RecommendationBar
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>642</x><y>252</y><w>78</w><h>96</h></coordinates><panel_attributes>lt=&lt;&lt;-
+</panel_attributes><additional_attributes>10;140;90;140;90;10;110;10</additional_attributes></element><element><id>Relation</id><coordinates><x>642</x><y>228</y><w>66</w><h>48</h></coordinates><panel_attributes>lt=&lt;&lt;-
+</panel_attributes><additional_attributes>10;20;90;20;90;60</additional_attributes></element><element><id>Relation</id><coordinates><x>642</x><y>270</y><w>66</w><h>126</h></coordinates><panel_attributes>lt=&lt;&lt;-
+</panel_attributes><additional_attributes>10;190;90;190;90;10</additional_attributes></element><element><id>Relation</id><coordinates><x>588</x><y>120</y><w>114</w><h>24</h></coordinates><panel_attributes>lt=&lt;&lt;-
+React Routing</panel_attributes><additional_attributes>10;20;170;20</additional_attributes></element><element><id>Relation</id><coordinates><x>498</x><y>126</y><w>48</w><h>18</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;60;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>522</x><y>228</y><w>126</w><h>36</h></coordinates><panel_attributes>CartView.js
+--
++ CartView(int: cart_id)
++ fetchCart(int: cart_id)
+
+bg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>522</x><y>270</y><w>126</w><h>48</h></coordinates><panel_attributes>HomeView.js
+--
++ HomeView()
++ assignCartId()
+--
+ - Assigns client cart_id
+bg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>522</x><y>324</y><w>126</w><h>42</h></coordinates><panel_attributes>CategoryView.js
+--
++ categoryView(int: category_id)
++ fetchCategory(int: category_id)
+
+bg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>522</x><y>372</y><w>126</w><h>42</h></coordinates><panel_attributes>ItemView.js
+--
++ SearchView(int: item_id)
++ fetchItem(int: item_id)
+
+bg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>642</x><y>270</y><w>66</w><h>24</h></coordinates><panel_attributes>lt=&lt;&lt;-
+</panel_attributes><additional_attributes>10;20;90;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>438</x><y>228</y><w>72</w><h>186</h></coordinates><panel_attributes>**Recommendation**
+**Sidebar**
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>432</x><y>54</y><w>84</w><h>42</h></coordinates><panel_attributes>Client
+--
+bg=orange</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>468</x><y>90</y><w>18</w><h>48</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>UMLPackage</id><coordinates><x>192</x><y>54</y><w>84</w><h>42</h></coordinates><panel_attributes>Server
+--
+bg=orange</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>204</x><y>90</y><w>18</w><h>48</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>UMLClass</id><coordinates><x>60</x><y>312</y><w>126</w><h>60</h></coordinates><panel_attributes>CartAccess.js
+--
+const url
+const dbName
+const collectionName
+--
++ getCart(int: cart_id)
+
+bg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>60</x><y>246</y><w>126</w><h>60</h></coordinates><panel_attributes>CategoryAccess.js
+--
+const url
+const dbName
+const collectionName
+--
++ getCategory(int: category_id)
+
+bg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>60</x><y>378</y><w>126</w><h>60</h></coordinates><panel_attributes>ItemAccess.js
+--
+const url
+const dbName
+const collectionName
+--
++ getItem(int: item_id)
+
+bg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>90</x><y>216</y><w>18</w><h>42</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>90</x><y>126</y><w>114</w><h>66</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+</panel_attributes><additional_attributes>170;20;10;20;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>294</x><y>210</y><w>48</w><h>48</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>60;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>324</x><y>210</y><w>54</w><h>48</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;70;60</additional_attributes></element><element><id>Relation</id><coordinates><x>732</x><y>264</y><w>18</w><h>42</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>360</x><y>258</y><w>18</w><h>48</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>UMLClass</id><coordinates><x>60</x><y>444</y><w>126</w><h>66</h></coordinates><panel_attributes>HomeAccess.js
+--
+const url
+const dbName
+const collectionName
+--
++ getHomeItems()
++ setCartId(int: cart_id)
+bg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>78</x><y>180</y><w>84</w><h>42</h></coordinates><panel_attributes>AccessObjs
+--
+bg=orange</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLInterface</id><coordinates><x>450</x><y>336</y><w>48</w><h>60</h></coordinates><panel_attributes>Fake Data
+Generator
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>294</x><y>384</y><w>192</w><h>60</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+Python generates DB data</panel_attributes><additional_attributes>10;10;10;80;300;80;300;10</additional_attributes></element></diagram>

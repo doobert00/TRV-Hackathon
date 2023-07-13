@@ -1,0 +1,117 @@
+[{
+  "_id": {
+    "$oid": "64aeea219ab2dfc23dd258b4"
+  },
+  "id": 2,
+  "name": "Grocery",
+  "products": [
+    9,
+    3,
+    2,
+    6,
+    8
+  ]
+},
+{
+  "_id": {
+    "$oid": "64aeea219ab2dfc23dd258b5"
+  },
+  "id": 3,
+  "name": "Shoes",
+  "products": [
+    2,
+    1
+  ]
+},
+{
+  "_id": {
+    "$oid": "64aeea219ab2dfc23dd258b6"
+  },
+  "id": 4,
+  "name": "Games",
+  "products": [
+    8,
+    10,
+    7,
+    2,
+    1,
+    6
+  ]
+},
+{
+  "_id": {
+    "$oid": "64aeea219ab2dfc23dd258b7"
+  },
+  "id": 5,
+  "name": "Health",
+  "products": [
+    1,
+    8,
+    5
+  ]
+},
+{
+  "_id": {
+    "$oid": "64aeea219ab2dfc23dd258b8"
+  },
+  "id": 6,
+  "name": "Toys",
+  "products": [
+    10,
+    5
+  ]
+},
+{
+  "_id": {
+    "$oid": "64aeea219ab2dfc23dd258b9"
+  },
+  "id": 7,
+  "name": "Movies",
+  "products": [
+    6,
+    9
+  ]
+},
+{
+  "_id": {
+    "$oid": "64aeea219ab2dfc23dd258bb"
+  },
+  "id": 9,
+  "name": "Beauty",
+  "products": [
+    7,
+    2,
+    1,
+    4
+  ]
+},
+{
+  "_id": {
+    "$oid": "64aeea219ab2dfc23dd258bc"
+  },
+  "id": 10,
+  "name": "Jewelry",
+  "products": [
+    3
+  ]
+},
+{
+  "_id": {
+    "$oid": "64aeea219ab2dfc23dd258bd"
+  },
+  "id": 11,
+  "name": "Music",
+  "products": [
+    6
+  ]
+},
+{
+  "_id": {
+    "$oid": "64af617d9ab2dfc23dd258ce"
+  },
+  "id": 1,
+  "name": "Appliance",
+  "products": [
+    5
+  ]
+}]
