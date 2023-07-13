@@ -1,8 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router";
 import "./ItemView.css";
-// import NA from "./NA.jpg"
+import NA from "./NA.jpg";
+
+const getItem = async (url) => {
+  const res = await fetch(url, {
+    method: "GET",
+    mode: "cors",
+  });
+  return await res.json();
+};
 
 export default function ItemView() {
+  const { id } = useParams();
+  const [item, setItem] = useState([]);
+
+  useEffect(() => {
+    getItem(`http://localhost:3000/api/products/${id}`).then((res) => {
+      setItem(res);
+      console.log(res);
+    });
+  }, []);
+
+  console.log(item.name);
   return (
     <div className={"grid-container"}>
       <div className="item1">
@@ -14,7 +34,7 @@ export default function ItemView() {
       </div>
 
       <div className="item3">
-        <h4>Fetch Item Name</h4>
+        <h4>{item.id}</h4>
         <p>Fetch Price</p>
         <p>Fetch item description</p>
         <input
