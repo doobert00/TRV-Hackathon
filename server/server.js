@@ -10,11 +10,9 @@ const port = 3000;
 app.use(express.json()); // JSON-parsing
 app.use(cors()); // Cross Origin Requests
 app.use(morgan("tiny")); // Server logs
+app.use(express.static("../client/build"));
 
 app
-  .get("/", (req, res) => {
-    res.redirect("/api");
-  })
   .get("/api", (req, res) => {
     res.send(
       `    
