@@ -12,9 +12,13 @@ app.use(express.json()); // JSON-parsing
 app.use(cors()); // Cross Origin Requests
 app.use(morgan("tiny")); // Server logs
 
-app.get("/", (req, res) => {
-  res.send(
-    `    
+app
+  .get("/", (req, res) => {
+    res.redirect("/api");
+  })
+  .get("/api", (req, res) => {
+    res.send(
+      `    
     <ul>
       <li>
         <a href="/api/products">Products</a>
@@ -26,38 +30,62 @@ app.get("/", (req, res) => {
         <a href="/api/categories">Categories</a>
       </li>
     </ul>`
-  );
-});
-
-app.route("/api/products").get((req, res) => {
-  db.findAllProducts((products) => {
-    if (!products) {
-      res.status(404).end();
-    } else {
-      res.send(products);
-    }
+    );
+  })
+  .get("/api/products", (req, res) => {
+    db.products.findAllProducts((products) => {
+      if (!products) {
+        res.status(404).end();
+      } else {
+        res.send(products);
+      }
+    });
+  })
+  .get("/api/products/:id", (req, res) => {
+    db.products.findProduct(req.params.id, (product) => {
+      if (!product) {
+        res.status(404).end();
+      } else {
+        res.send(product);
+      }
+    });
+  })
+  .get("/api/categories", (req, res) => {
+    db.categories.findAllCategories((categories) => {
+      if (!categories) {
+        res.status(404).end();
+      } else {
+        res.send(categories);
+      }
+    });
+  })
+  .get("/api/categories/:id", (req, res) => {
+    db.categories.findCategory(req.params.id, (category) => {
+      if (!category) {
+        res.status(404).end();
+      } else {
+        res.send(category);
+      }
+    });
+  })
+  .get("/api/orders", (req, res) => {
+    db.orders.findAllOrders((orders) => {
+      if (!orders) {
+        res.status(404).end();
+      } else {
+        res.send(orders);
+      }
+    });
+  })
+  .get("/api/orders/:id", (req, res) => {
+    db.orders.findOrder(req.params.id, (order) => {
+      if (!order) {
+        res.status(404).end();
+      } else {
+        res.send(order);
+      }
+    });
   });
-});
-
-app.route("/api/categories").get((req, res) => {
-  db.findAllCategories((categories) => {
-    if (!categories) {
-      res.status(404).end();
-    } else {
-      res.send(categories);
-    }
-  });
-});
-
-app.route("/api/orders").get((req, res) => {
-  db.findAllOrders((orders) => {
-    if (!orders) {
-      res.status(404).end();
-    } else {
-      res.send(orders);
-    }
-  });
-});
 
 app.listen(port, () => {
   console.log(`Server listening on  http://localhost:${port}`);
