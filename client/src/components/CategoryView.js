@@ -42,11 +42,13 @@ export default function CategoryView() {
 
   return (
     <div>
-      <Container style={{ display: "flex", flexWrap: "wrap" }}>
-        {items.map((item) => (
-          <p>{item.name}</p>
-        ))}
-      </Container>
+      {items.map((item) => (
+        <p>
+          <Link to={`/item/${item.id}`}>
+            {item.name} : {item.price}
+          </Link>
+        </p>
+      ))}
     </div>
   );
 }
