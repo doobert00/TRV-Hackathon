@@ -8,17 +8,19 @@
   background-color: #e9e9e9;
   width: 15%;
   height: 85%;
-  padding: 4px;
 }
 .right {
   background-color: #e9e9e9;
-  width: 15%;
+  width: 10%;
   height: 85%;
+  text-align: right;
 }
 .center {
+  background-color: #ffffff;
   height: 80vh;
   width: 70%;
   height: 85%;
+  margin: 1px;
 }
 
 .top input[type="text"] {
