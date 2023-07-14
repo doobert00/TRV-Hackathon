@@ -46,7 +46,3 @@ export default function ItemView() {
     </div>
   );
 }
-
-// function fetchItem(props) {
-//   return;
-// }
