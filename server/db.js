@@ -37,9 +37,9 @@ async function startup() {
 startup();
 
 module.exports.products = {
-  findAllProducts: (callback) => {
+  findAllProducts: (search, callback) => {
     collections.products
-      .find({})
+      .find({ name: { $regex: `^${search}`, $options: "i" } })
       .toArray()
       .then((products) => callback(products));
   },
