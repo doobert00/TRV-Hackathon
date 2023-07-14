@@ -7,7 +7,6 @@ import ItemView from "./components/ItemView";
 import CategoryView from "./components/CategoryView";
 import HomeView from "./components/HomeView.js";
 import CategoryPane from "./components/CategoryPane";
-import CartPane from "./components/CartPane";
 
 import logo from "./components/logo.png";
 import cart from "./components/cart.jpg";
