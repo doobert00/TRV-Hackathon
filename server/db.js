@@ -30,9 +30,9 @@ async function startup() {
   collections.orders = db.collection(collections.orders);
 
   // Seed the database with data from JSON files
-  await seedData(collections.products, "/dataset/products.json");
-  await seedData(collections.categories, "/dataset/categories.json");
-  await seedData(collections.orders, "/dataset/orders.json");
+  await seedData(collections.products, "/python/products.json");
+  await seedData(collections.categories, "/python/categories.json");
+  await seedData(collections.orders, "/python/orders.json");
 }
 startup();
 
