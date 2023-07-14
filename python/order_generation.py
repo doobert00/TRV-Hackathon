@@ -1,14 +1,12 @@
-import csv
+import os
 import random
 import string
 import json
 from faker import Faker
-import numpy as np
-import pandas as pd
 
 # TO DO: hardcode in objects (or figure out a better way to do it) 
 # bring json file in mockaroo
-with open("products.json") as json_file:
+with open(os.path.join(os.path.dirname(__file__), "products.json")) as json_file:
     products = json.load(json_file)
 
 # import Faker and use that for person generation
@@ -38,7 +36,7 @@ for i in range(1, NUM_ROWS + 1):
         # now we pick a random product for them to add to cart
         prod_number = random.randint(0, 69)
         # make sure no duplicates
-        if prod_number not in cart:
+        if (prod_number+1) not in cart:
             cart.append(prod_number+1)
             cost = float(products[prod_number]["price"][1:])
             total += cost
@@ -69,5 +67,5 @@ for i in range(1, NUM_ROWS + 1):
 json_object = json.dumps(orders, indent=4)
 
 # Writing to orders.json
-with open("orders.json", "w") as outfile:
+with open(os.path.join(os.path.dirname(__file__), "orders.json"), "w") as outfile:
     outfile.write(json_object)
