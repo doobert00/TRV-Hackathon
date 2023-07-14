@@ -1,6 +1,7 @@
 const { MongoClient } = require("mongodb");
 const fs = require("fs/promises");
 const path = require("path");
+const { PythonShell } = require("python-shell");
 
 const dbName = "online-store";
 const url = "mongodb://localhost:27017";
@@ -11,6 +12,16 @@ const collections = {
 };
 
 async function seedData(collection, seed_file) {
+  await PythonShell.run(
+    path.join(__dirname, "..", "/python/order_generation.py"),
+    null
+  );
+
+  await PythonShell.run(
+    path.join(__dirname, "..", "/python/categories_generation.py"),
+    null
+  );
+
   let seed = await fs.readFile(path.join(__dirname, "..", seed_file), "utf8");
   seed = JSON.parse(seed).map((item) => {
     delete item._id;
@@ -30,9 +41,9 @@ async function startup() {
   collections.orders = db.collection(collections.orders);
 
   // Seed the database with data from JSON files
-  await seedData(collections.products, "/dataset/products.json");
-  await seedData(collections.categories, "/dataset/categories.json");
-  await seedData(collections.orders, "/dataset/orders.json");
+  await seedData(collections.products, "/python/products.json");
+  await seedData(collections.categories, "/python/categories.json");
+  await seedData(collections.orders, "/python/orders.json");
 }
 startup();
 
