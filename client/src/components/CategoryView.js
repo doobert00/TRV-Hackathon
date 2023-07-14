@@ -33,8 +33,7 @@ export default function CategoryView() {
             get(`http://localhost:3000/api/products/${x}`).then((prod) => {
               let tmp = items;
               tmp.push(prod);
-              tmp = [...new Set(tmp)];
-              setItems([...tmp]);
+              setItems([...new Set(tmp)]);
             });
           }
         }
