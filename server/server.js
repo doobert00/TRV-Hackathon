@@ -1,7 +1,6 @@
 const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
-const fs = require("fs");
 const db = require("./db");
 
 const app = express();
@@ -11,11 +10,9 @@ const port = 3000;
 app.use(express.json()); // JSON-parsing
 app.use(cors()); // Cross Origin Requests
 app.use(morgan("tiny")); // Server logs
+app.use(express.static("../client/build"));
 
 app
-  .get("/", (req, res) => {
-    res.redirect("/api");
-  })
   .get("/api", (req, res) => {
     res.send(
       `    
@@ -83,6 +80,15 @@ app
         res.status(404).end();
       } else {
         res.send(order);
+      }
+    });
+  })
+  .post("/api/orders", (req, res) => {
+    db.orders.addOrder(req.body, (ok) => {
+      if (!ok) {
+        res.status(500).end();
+      } else {
+        res.status(201).end();
       }
     });
   });
