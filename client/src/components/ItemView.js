@@ -30,7 +30,7 @@ export default function ItemView() {
   return (
     <div className={"grid-container"}>
       <div className="item1">
-        <img src=""></img>
+        <img style={{ width: 150, height: 125 }} src={NA}></img>
       </div>
 
       <div className="item3">
