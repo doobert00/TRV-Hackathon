@@ -11,6 +11,12 @@ const getItem = async (url) => {
   return await res.json();
 };
 
+function handleAddToCart(item) {
+  let cur_entries = parseInt(sessionStorage.getItem("num_entries"));
+  sessionStorage.setItem(cur_entries, JSON.stringify(item));
+  sessionStorage.setItem("num_entries", cur_entries + 1);
+}
+
 export default function ItemView() {
   const { id } = useParams();
   const [item, setItem] = useState([]);
@@ -34,7 +40,7 @@ export default function ItemView() {
         <input
           type={"button"}
           value="Add to Cart"
-          //onClick={() => props.setSelectedBook(newBook)}
+          onClick={() => handleAddToCart(item)}
         />
       </div>
     </div>

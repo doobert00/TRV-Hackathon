@@ -6,10 +6,13 @@ import "./App.css";
 import ItemView from "./components/ItemView";
 import CategoryView from "./components/CategoryView";
 import HomeView from "./components/HomeView.js";
-import CategoryPane from "./components/CategoryPane";
+import CategoryPane from "./components/CategoryPane.js";
+import CartView from "./components/CartView.js";
 
 import logo from "./components/logo.png";
 import cart from "./components/cart.jpg";
+
+sessionStorage.setItem("num_entries", 0);
 
 function App() {
   const nav = useNavigate();
@@ -55,7 +58,7 @@ function App() {
                 <Route exact path="/" element={<HomeView />} />
                 <Route path="/item/:id" element={<ItemView />} />
                 <Route path="/category/:id" element={<CategoryView />} />
-                <Route exact path="/cart" element={<HomeView />} />
+                <Route path="/cart" element={<CartView />} />
               </Routes>
             </Col>
           </div>
