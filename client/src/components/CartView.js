@@ -16,9 +16,27 @@ export default function CartView() {
     <div>
       {items.map((item) => (
         <p>
-          {item.name} : {item.price}
+          <Link to={`/item/${item.id}`}>
+            {item.name} : {item.price}
+          </Link>
         </p>
       ))}
+      <p> Cost: </p>
+      <p> Buy Now Button</p>
     </div>
   );
 }
+/*
+{
+    "date": "8/23/2022",
+    "first_name": "Giselle",
+    "last_name": "Flaune",
+    "email": "gflaune0@wix.com",
+    "addreess": "188 Briar Crest Court",
+    "credit_card": "56022122569562380",
+    "products": [
+      10,
+      10
+    ],
+    "price": "$151.26" //Compute cost sum on my end
+}*/
