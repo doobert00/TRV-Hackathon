@@ -30,7 +30,8 @@ app
     );
   })
   .get("/api/products", (req, res) => {
-    db.products.findAllProducts((products) => {
+    let search = req.query.search ? req.query.search : ".*";
+    db.products.findAllProducts(search, (products) => {
       if (!products) {
         res.status(404).end();
       } else {
