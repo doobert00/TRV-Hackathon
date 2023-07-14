@@ -1,0 +1,21 @@
+.leftbtn {
+  content: " ";
+  border-left: 2px solid #000;
+  border-bottom: 2px solid #000;
+  width: 20px;
+  height: 20px;
+  transform: rotate(45deg);
+  cursor: pointer;
+  display: block;
+}
+
+.rightbtn {
+  content: " ";
+  border-right: 2px solid #000;
+  border-top: 2px solid #000;
+  width: 20px;
+  height: 20px;
+  transform: rotate(45deg);
+  cursor: pointer;
+  display: block;
+}
