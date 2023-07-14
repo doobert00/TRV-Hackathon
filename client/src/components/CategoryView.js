@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
-import { Container, Row, Col } from "react-grid";
 import { Link } from "react-router-dom";
-import NA from "./NA.jpg";
 import "./CategoryView.css";
 
 const get = async (url) => {
@@ -16,7 +14,6 @@ const get = async (url) => {
 export default function CategoryView() {
   const { id } = useParams();
   const [items, setItems] = useState([]);
-  const [index, setIndex] = useState(0);
 
   useEffect(() => {
     get(`http://localhost:3000/api/categories/${id}`)
