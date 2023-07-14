@@ -3,8 +3,6 @@ import random
 import string
 import json
 from faker import Faker
-import numpy as np
-import pandas as pd
 
 # TO DO: hardcode in objects (or figure out a better way to do it) 
 # bring json file in mockaroo

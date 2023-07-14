@@ -1,9 +1,5 @@
-import csv
-import random
-import string
 import json
-import numpy as np
-import pandas as pd
+
 
 # Create categories array containing dictionaries of each category
 categories = [
