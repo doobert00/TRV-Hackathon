@@ -1,0 +1,61 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><help_text></help_text><element><id>UMLClass</id><coordinates><x>890</x><y>530</y><w>210</w><h>50</h></coordinates><panel_attributes>_object: CategoryPanel
+--
+
+bg=orange
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>890</x><y>590</y><w>210</w><h>50</h></coordinates><panel_attributes>_object: HomeView
+--
+Route: /
+
+bg=orange</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>850</x><y>400</y><w>210</w><h>70</h></coordinates><panel_attributes>_object: App
+--
+- Renders fixed frame elements
+- React Router
+
+bg=orange</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>890</x><y>770</y><w>210</w><h>50</h></coordinates><panel_attributes>_object: CategoryView
+--
+Route: /category/:id
+
+
+
+
+bg=orange</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>890</x><y>650</y><w>210</w><h>50</h></coordinates><panel_attributes>_object: CartView
+--
+Route: /Cart
+
+bg=orange</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>850</x><y>460</y><w>60</w><h>170</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;</panel_attributes><additional_attributes>10;10;10;150;40;150</additional_attributes></element><element><id>UMLClass</id><coordinates><x>890</x><y>710</y><w>210</w><h>50</h></coordinates><panel_attributes>_object: ItemView
+--
+Route: /items/:id
+
+bg=orange
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>520</x><y>400</y><w>210</w><h>70</h></coordinates><panel_attributes>_object: Server
+--
+
+bg=orange</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>180</x><y>490</y><w>210</w><h>60</h></coordinates><panel_attributes>_object: dbs
+--
+- Seeds the DB
+bg=orange</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>360</x><y>610</y><w>100</w><h>30</h></coordinates><panel_attributes>products.json</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>360</x><y>660</y><w>100</w><h>30</h></coordinates><panel_attributes>categories.json</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>360</x><y>710</y><w>100</w><h>30</h></coordinates><panel_attributes>orders.json</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>290</x><y>400</y><w>210</w><h>70</h></coordinates><panel_attributes>order_generation.py
+--
+- Generates the orders collection
+bg=cyan</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>450</x><y>610</y><w>140</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;120;10</additional_attributes></element><element><id>Relation</id><coordinates><x>450</x><y>610</y><w>140</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+
+</panel_attributes><additional_attributes>10;60;120;60;120;10</additional_attributes></element><element><id>Relation</id><coordinates><x>450</x><y>610</y><w>140</w><h>130</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;110;120;110;120;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>570</x><y>650</y><w>100</w><h>30</h></coordinates><panel_attributes>MongoDB
+bg=green</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>270</x><y>650</y><w>110</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>90;70;10;70;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>270</x><y>610</y><w>110</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>90;10;10;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>270</x><y>660</y><w>110</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>90;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>260</x><y>420</y><w>40</w><h>90</h></coordinates><panel_attributes>lt=-&gt;&gt;&gt;</panel_attributes><additional_attributes>10;10;20;10;20;70</additional_attributes></element><element><id>Relation</id><coordinates><x>610</x><y>460</y><w>30</w><h>210</h></coordinates><panel_attributes>lt=-&gt;&gt;&gt;&gt;&gt;</panel_attributes><additional_attributes>10;10;10;190</additional_attributes></element><element><id>Relation</id><coordinates><x>970</x><y>460</y><w>30</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>UMLClass</id><coordinates><x>690</x><y>200</y><w>210</w><h>180</h></coordinates><panel_attributes>API Routes
+--
+GET
+ /api/categories/
+ /api/categories/:id
+ /api/products
+ /api/products/:id
+ /api/orders/
+ /api/orders/:id
+--
+POST
+ /api/orders/
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>720</x><y>410</y><w>150</w><h>40</h></coordinates><panel_attributes>lt=&lt;.&gt;
+</panel_attributes><additional_attributes>130;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>850</x><y>560</y><w>60</w><h>130</h></coordinates><panel_attributes>lt=-&gt;</panel_attributes><additional_attributes>10;10;10;110;40;110</additional_attributes></element><element><id>Relation</id><coordinates><x>850</x><y>600</y><w>60</w><h>150</h></coordinates><panel_attributes>lt=-&gt;</panel_attributes><additional_attributes>10;10;10;130;40;130</additional_attributes></element><element><id>Relation</id><coordinates><x>850</x><y>600</y><w>60</w><h>210</h></coordinates><panel_attributes>lt=-&gt;</panel_attributes><additional_attributes>10;10;10;190;40;190</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1150</x><y>420</y><w>100</w><h>30</h></coordinates><panel_attributes>localStorage</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>270</x><y>540</y><w>30</w><h>110</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>1050</x><y>420</y><w>120</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>100;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1090</x><y>440</y><w>130</w><h>250</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>110;10;110;230;10;230</additional_attributes></element><element><id>Relation</id><coordinates><x>1090</x><y>440</y><w>130</w><h>310</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>110;10;110;290;10;290</additional_attributes></element><element><id>Relation</id><coordinates><x>780</x><y>370</y><w>30</w><h>80</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;60;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>350</x><y>730</y><w>130</w><h>50</h></coordinates><panel_attributes>lt=-
+
+Categories</panel_attributes><additional_attributes>10;20;110;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>50</x><y>400</y><w>220</w><h>70</h></coordinates><panel_attributes>categories_generation.py
+--
+- Generates the products collection
+- Generates the categories collection
+bg=cyan</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>270</x><y>420</y><w>40</w><h>90</h></coordinates><panel_attributes>lt=-&gt;&gt;&gt;</panel_attributes><additional_attributes>20;10;10;10;10;70</additional_attributes></element></diagram>
