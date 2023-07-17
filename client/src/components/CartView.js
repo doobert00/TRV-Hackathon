@@ -1,8 +1,29 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
+const DATE = "1/1/11";
+const FIRST_NAME = "John";
+const LAST_NAME = "Doe";
+const EMAIL = "jd@email.gov";
+const ADDRESS = "1 Email blvd, Saskatoon Saskatchewan, Canada";
+const CREDIT_CARD = "1111222233334444";
+
 const postOrder = async (items, cost) => {
-  //POST the order
+  const res = await fetch("http://localhost:3000/api/orders", {
+    method: "POST",
+    mode: "cors",
+    body: JSON.stringify({
+      date: DATE,
+      first_name: FIRST_NAME,
+      last_name: LAST_NAME,
+      address: ADDRESS,
+      credit_card: CREDIT_CARD,
+      email: EMAIL,
+      cart: [1],
+      price: cost.toString(),
+    }),
+  });
+  console.log(res);
   sessionStorage.clear();
   sessionStorage.setItem("num_entries", 0);
 };
@@ -47,17 +68,3 @@ export default function CartView() {
     </div>
   );
 }
-/*
-{
-    "date": "8/23/2022",
-    "first_name": "Giselle",
-    "last_name": "Flaune",
-    "email": "gflaune0@wix.com",
-    "addreess": "188 Briar Crest Court",
-    "credit_card": "56022122569562380",
-    "products": [
-      10,
-      10
-    ],
-    "price": "$151.26" //Compute cost sum on my end
-}*/
