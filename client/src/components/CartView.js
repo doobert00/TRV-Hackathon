@@ -12,6 +12,9 @@ const postOrder = async (items, cost) => {
   const res = await fetch("http://localhost:3000/api/orders", {
     method: "POST",
     mode: "cors",
+    headers: {
+      "Content-Type": "application/json",
+    },
     body: JSON.stringify({
       date: DATE,
       first_name: FIRST_NAME,
